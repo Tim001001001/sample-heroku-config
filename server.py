@@ -24,8 +24,8 @@ while True:
     updates = response.json()  # parse python object from response
     last_update_id = last_update_id + 1
     for msg in updates['result']:
-        print(1)
+        print(msg['message']['text'])
 
         # requests.get('https://api.telegram.org/bot500594999:AAH5Io-AbkrluJUUAVali2EDSaYGFE1TQok/sendMessage', params=data)
 
-    sleep(1)
+    sleep(10)
