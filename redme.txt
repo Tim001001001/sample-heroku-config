@@ -1,0 +1,27 @@
+Telegram Bot
+
+¬вести ƒень недеели (натуральным числом или русским или английском словом)
+
+» получить расписание дн€ в формате строки
+
+{
+      "message": {
+        "chat": {
+          "first_name": "Tim",
+          "id": 426464786,
+          "last_name": "Sold",
+          "type": "private"
+        },
+        "date": 1513776426,
+        "from": {
+          "first_name": "Tim",
+          "id": 426464786,
+          "is_bot": false,
+          "language_code": "ru",
+          "last_name": "Sold"
+        },
+        "message_id": 31,
+        "text": "5"
+      },
+      "update_id": 886699786
+    },
