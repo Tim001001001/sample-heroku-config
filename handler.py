@@ -1,4 +1,12 @@
-lessons = [["Rus", "Rus", 'Chem', 'Chem', 'Math', 'Math'], ["Ru", "Ru", 'Che', 'Che', 'Mat', 'Mat'], ["us", "us", 'hem', 'hem', 'ath', 'ath'], ["Rs", "Rs", 'Cm', 'Cm', 'Mh', 'Mh']]
+russianName = {"ru": "Русский язык ", "Chem": "Химия"}
+
+teacherName = {"ru": "НЕКТО"}
+
+lessons = [["ru", "Rus", 'Chem', 'Chem', 'Math', 'Math'],
+           ["ch", "tt", 'Che', 'Che', 'Mat', 'Mat'],
+           ["ru", "ru", 'hem', 'hem', 'ath', 'ath'],
+           ["Rs", "Rs", 'Cm', 'Cm', 'Mh', 'Mh']
+           ]
 
 
 def handle_message(message, nickname="user"):
@@ -9,11 +17,13 @@ def handle_message(message, nickname="user"):
     @returns - text of response
     '''
 
-    words = message.split()
     global lessons
     answer = nickname + ': '
     answer += 'Your message is ' + message
-    answer = lessons[int(message.split()[0])-1][int(message.split()[1])-1]
+    day = int(message.split()[0])-1
+    number_of_lesson = int(message.split()[1])-1
+    currentLesson = lessons[day][number_of_lesson]
+    answer = russianName[currentLesson] + teacherName[currentLesson]
     return answer
 
 
