@@ -1,6 +1,6 @@
 russianName = {"ru": "Русский язык ", "Ch": "Химия", "Mat": "Математика"}
 
-teacherName = {"ru": "с НЕКТО", "Ch": " некто", "Mat": "с некто", "Phis": "с некто"}
+teacherName = {"ru": " с НЕКТО", "Ch": " c некто", "Mat": " с некто", "Phis": " с некто"}
 
 lessons = {"Понедельник": ["ru", "ru", 'Ch', 'Ch', 'Mat', 'Mat'],
            "Вторник": ["ch", "Mat", 'Ch', 'Ch', 'Mat', 'Mat'],
