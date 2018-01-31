@@ -1,29 +1,30 @@
-russianName = {"ru": "Русский язык ", "Chem": "Химия"}
+russianName = {"ru": "Русский язык ", "Ch": "Химия", "Mat": "Математика"}
 
-teacherName = {"ru": "НЕКТО"}
+teacherName = {"ru": "с НЕКТО", "Ch": " некто", "Mat": "с некто", "Phis": "с некто"}
 
-lessons = [["ru", "Rus", 'Chem', 'Chem', 'Math', 'Math'],
-           ["ch", "tt", 'Che', 'Che', 'Mat', 'Mat'],
-           ["ru", "ru", 'hem', 'hem', 'ath', 'ath'],
-           ["Rs", "Rs", 'Cm', 'Cm', 'Mh', 'Mh']
-           ]
+lessons = {"Понедельник": ["ru", "ru", 'Ch', 'Ch', 'Mat', 'Mat'],
+           "Вторник": ["ch", "Mat", 'Ch', 'Ch', 'Mat', 'Mat'],
+           "Среда": ["ru", "ru", 'hem', 'hem', 'ath', 'ath'],
+           "Четверг": ["Rs", "Rs", 'Cm', 'Cm', 'Mh', 'Mh'],
+           "Пятница": ["Rs", "Rs", 'Cm', 'Cm', "Mat", 'Mat']}
+
+time = ["9:00", "9:50", "10:40", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
 
 
-def handle_message(message, nickname="user"):
-    '''handles message:
-    @message - text of recieved message
-    @nickname - nickname of sender
+def handle_message(message, nickname):
 
-    @returns - text of response
-    '''
+    income = message.split()
+    day = income[0]
+    if int(len(income)) == 1:
+        answer = lessons[day]
+    else:
 
-    global lessons
-    answer = nickname + ': '
-    answer += 'Your message is ' + message
-    day = int(message.split()[0])-1
-    number_of_lesson = int(message.split()[1])-1
-    currentLesson = lessons[day][number_of_lesson]
-    answer = russianName[currentLesson] + teacherName[currentLesson]
+        number_of_lesson = int(income[1]) - 1
+
+        currentLesson = lessons[day][number_of_lesson]
+
+        answer = nickname + "'s " + russianName[currentLesson] + teacherName[currentLesson] + " в " + time[number_of_lesson]
+
     return answer
 
 
