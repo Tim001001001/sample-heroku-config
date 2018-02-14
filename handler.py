@@ -1,4 +1,4 @@
-russianName = {"ru": "Русский язык ", "Ch": "Химия", "Mat": "Математика"}
+russianName = {"ru": "Русский язык ", "Ch": "Химия", "Mat": "Математика", "Phis": "Физика"}
 
 teacherName = {"ru": " с НЕКТО", "Ch": " c некто", "Mat": " с некто", "Phis": " с некто"}
 
@@ -11,7 +11,7 @@ lessons = {"Понедельник": ["ru", "ru", 'Ch', 'Ch', 'Mat', 'Mat'],
 time = ["9:00", "9:50", "10:40", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
 
 
-def handle_message(message, nickname):
+def handle_message(message, nickname=""):
 
     income = message.split()
     day = income[0]
@@ -23,7 +23,7 @@ def handle_message(message, nickname):
 
         currentLesson = lessons[day][number_of_lesson]
 
-        answer = nickname + "'s " + russianName[currentLesson] + teacherName[currentLesson] + " в " + time[number_of_lesson]
+        answer = russianName[currentLesson] + teacherName[currentLesson] + " в " + time[number_of_lesson]
 
     return answer
 
